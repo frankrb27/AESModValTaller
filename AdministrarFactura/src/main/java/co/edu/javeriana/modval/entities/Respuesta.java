@@ -8,11 +8,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Respuesta", propOrder = {
-        "idConvenio","mensaje"
+        "factura","mensaje"
 })
 public class Respuesta {
 
-	private String idConvenio;
+	private Factura factura;
 	private String mensaje;
 
 	/**
@@ -25,23 +25,39 @@ public class Respuesta {
 	 * @param idConvenio
 	 * @param mensaje
 	 */
-	public Respuesta(String idConvenio, String mensaje){
-		this.idConvenio = idConvenio;
+	public Respuesta(Factura factura, String mensaje){
+		this.factura = factura;
 		this.mensaje = mensaje;
-	}	
+	}
 	
 	/**
-	 * @return the idConvenio
+	 * Constructor con parámetros
+	 * @param factura
 	 */
-	public String getIdConvenio() {
-		return idConvenio;
+	public Respuesta(Factura factura){
+		this.factura = factura;
+	}
+	
+	/**
+	 * Constructor con parámetros
+	 * @param mensaje
+	 */
+	public Respuesta(String mensaje){
+		this.mensaje = mensaje;
+	}	
+
+	/**
+	 * @return the factura
+	 */
+	public Factura getFactura() {
+		return factura;
 	}
 
 	/**
-	 * @param idConvenio the idConvenio to set
+	 * @param factura the factura to set
 	 */
-	public void setIdConvenio(String idConvenio) {
-		this.idConvenio = idConvenio;
+	public void setFactura(Factura factura) {
+		this.factura = factura;
 	}
 
 	/**
@@ -56,7 +72,6 @@ public class Respuesta {
 	 */
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
-	}
-	
-	
+	}	
+		
 }

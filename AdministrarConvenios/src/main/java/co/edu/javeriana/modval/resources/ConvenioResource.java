@@ -19,13 +19,12 @@ public class ConvenioResource {
 	private ConvenioService pagoConvenioService;
 
 	@RequestMapping(path = "convenios/{idConvenio}", method = RequestMethod.GET,
-			consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
 			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	public Convenio consultarConvenio(@PathVariable("idConvenio") String idConvenio) {
 		try{
 			//Consultar convenio
 			Convenio convenio = pagoConvenioService.getConvenio(idConvenio);
-			if(convenio!=null && convenio.getUrlConsulta()!=null){
+			if(convenio!=null && convenio.getIdConvenio()!=null){
 				return convenio;
 			}else{
 				return null;
