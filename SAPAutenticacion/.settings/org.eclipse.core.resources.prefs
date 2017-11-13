@@ -8,6 +8,12 @@ encoding//src/main/java/co/edu/javeriana/modval/service/Autenticacion_BindingSke
 encoding//src/main/java/co/edu/javeriana/modval/service/Autenticacion_BindingStub.java=UTF-8
 encoding//src/main/java/co/edu/javeriana/modval/service/ServicioAutenticacion.java=UTF-8
 encoding//src/main/java/co/edu/javeriana/modval/service/ServicioAutenticacionLocator.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/servicio/sap/WSAutenticacion_BindingImpl.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/servicio/sap/WSAutenticacion_BindingSkeleton.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/servicio/sap/WSAutenticacion_BindingStub.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/servicio/sap/WSAutenticacion_PortType.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/servicio/sap/WSAutenticacion_Service.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/servicio/sap/WSAutenticacion_ServiceLocator.java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/test/java=UTF-8
 encoding//src/test/resources=UTF-8
