@@ -1,63 +1,63 @@
 /**
- * WSAutenticacion_ServiceLocator.java
+ * ServicioAutenticacionLocator.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package co.edu.javeriana.modval.servicio.sap;
+package co.edu.javeriana.modval.service;
 
-public class WSAutenticacion_ServiceLocator extends org.apache.axis.client.Service implements co.edu.javeriana.modval.servicio.sap.WSAutenticacion_Service {
+public class ServicioAutenticacionLocator extends org.apache.axis.client.Service implements co.edu.javeriana.modval.service.ServicioAutenticacion {
 
 /**
- * WSDL File for WSAutenticacion
+ * WSDL File for Autenticacion
  */
 
-    public WSAutenticacion_ServiceLocator() {
+    public ServicioAutenticacionLocator() {
     }
 
 
-    public WSAutenticacion_ServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public ServicioAutenticacionLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public WSAutenticacion_ServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public ServicioAutenticacionLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for WSAutenticacion_Port
-    private java.lang.String WSAutenticacion_Port_address = "http://localhost:9030/sap-autenticacion/WSAutenticacion/";
+    // Use to get a proxy class for AutenticacionInterface
+    private java.lang.String AutenticacionInterface_address = "http://www.sap.com/Autenticacion/";
 
-    public java.lang.String getWSAutenticacion_PortAddress() {
-        return WSAutenticacion_Port_address;
+    public java.lang.String getAutenticacionInterfaceAddress() {
+        return AutenticacionInterface_address;
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String WSAutenticacion_PortWSDDServiceName = "WSAutenticacion_Port";
+    private java.lang.String AutenticacionInterfaceWSDDServiceName = "AutenticacionInterface";
 
-    public java.lang.String getWSAutenticacion_PortWSDDServiceName() {
-        return WSAutenticacion_PortWSDDServiceName;
+    public java.lang.String getAutenticacionInterfaceWSDDServiceName() {
+        return AutenticacionInterfaceWSDDServiceName;
     }
 
-    public void setWSAutenticacion_PortWSDDServiceName(java.lang.String name) {
-        WSAutenticacion_PortWSDDServiceName = name;
+    public void setAutenticacionInterfaceWSDDServiceName(java.lang.String name) {
+        AutenticacionInterfaceWSDDServiceName = name;
     }
 
-    public co.edu.javeriana.modval.servicio.sap.WSAutenticacion_PortType getWSAutenticacion_Port() throws javax.xml.rpc.ServiceException {
+    public co.edu.javeriana.modval.service.AutenticacionInterface getAutenticacionInterface() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
-            endpoint = new java.net.URL(WSAutenticacion_Port_address);
+            endpoint = new java.net.URL(AutenticacionInterface_address);
         }
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getWSAutenticacion_Port(endpoint);
+        return getAutenticacionInterface(endpoint);
     }
 
-    public co.edu.javeriana.modval.servicio.sap.WSAutenticacion_PortType getWSAutenticacion_Port(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public co.edu.javeriana.modval.service.AutenticacionInterface getAutenticacionInterface(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            co.edu.javeriana.modval.servicio.sap.WSAutenticacion_BindingStub _stub = new co.edu.javeriana.modval.servicio.sap.WSAutenticacion_BindingStub(portAddress, this);
-            _stub.setPortName(getWSAutenticacion_PortWSDDServiceName());
+            co.edu.javeriana.modval.service.Autenticacion_BindingStub _stub = new co.edu.javeriana.modval.service.Autenticacion_BindingStub(portAddress, this);
+            _stub.setPortName(getAutenticacionInterfaceWSDDServiceName());
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {
@@ -65,8 +65,8 @@ public class WSAutenticacion_ServiceLocator extends org.apache.axis.client.Servi
         }
     }
 
-    public void setWSAutenticacion_PortEndpointAddress(java.lang.String address) {
-        WSAutenticacion_Port_address = address;
+    public void setAutenticacionInterfaceEndpointAddress(java.lang.String address) {
+        AutenticacionInterface_address = address;
     }
 
     /**
@@ -76,9 +76,9 @@ public class WSAutenticacion_ServiceLocator extends org.apache.axis.client.Servi
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (co.edu.javeriana.modval.servicio.sap.WSAutenticacion_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
-                co.edu.javeriana.modval.servicio.sap.WSAutenticacion_BindingStub _stub = new co.edu.javeriana.modval.servicio.sap.WSAutenticacion_BindingStub(new java.net.URL(WSAutenticacion_Port_address), this);
-                _stub.setPortName(getWSAutenticacion_PortWSDDServiceName());
+            if (co.edu.javeriana.modval.service.AutenticacionInterface.class.isAssignableFrom(serviceEndpointInterface)) {
+                co.edu.javeriana.modval.service.Autenticacion_BindingStub _stub = new co.edu.javeriana.modval.service.Autenticacion_BindingStub(new java.net.URL(AutenticacionInterface_address), this);
+                _stub.setPortName(getAutenticacionInterfaceWSDDServiceName());
                 return _stub;
             }
         }
@@ -98,8 +98,8 @@ public class WSAutenticacion_ServiceLocator extends org.apache.axis.client.Servi
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
-        if ("WSAutenticacion_Port".equals(inputPortName)) {
-            return getWSAutenticacion_Port();
+        if ("AutenticacionInterface".equals(inputPortName)) {
+            return getAutenticacionInterface();
         }
         else  {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
@@ -109,7 +109,7 @@ public class WSAutenticacion_ServiceLocator extends org.apache.axis.client.Servi
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://www.examples.com/wsdl/WSAutenticacion.wsdl", "WSAutenticacion_Service");
+        return new javax.xml.namespace.QName("http://www.sap.com/wsdl/Autenticacion.wsdl", "ServicioAutenticacion");
     }
 
     private java.util.HashSet ports = null;
@@ -117,7 +117,7 @@ public class WSAutenticacion_ServiceLocator extends org.apache.axis.client.Servi
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://www.examples.com/wsdl/WSAutenticacion.wsdl", "WSAutenticacion_Port"));
+            ports.add(new javax.xml.namespace.QName("http://www.sap.com/wsdl/Autenticacion.wsdl", "AutenticacionInterface"));
         }
         return ports.iterator();
     }
@@ -127,8 +127,8 @@ public class WSAutenticacion_ServiceLocator extends org.apache.axis.client.Servi
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         
-if ("WSAutenticacion_Port".equals(portName)) {
-            setWSAutenticacion_PortEndpointAddress(address);
+if ("AutenticacionInterface".equals(portName)) {
+            setAutenticacionInterfaceEndpointAddress(address);
         }
         else 
 { // Unknown Port Name
