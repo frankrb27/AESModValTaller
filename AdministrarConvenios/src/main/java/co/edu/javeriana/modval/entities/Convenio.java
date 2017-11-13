@@ -1,5 +1,9 @@
 package co.edu.javeriana.modval.entities;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Convenio {
 
 	private String idConvenio;
@@ -48,6 +52,7 @@ public class Convenio {
 	/**
 	 * @param idConvenio the idConvenio to set
 	 */
+	@XmlElement
 	public void setIdConvenio(String idConvenio) {
 		this.idConvenio = idConvenio;
 	}
@@ -62,6 +67,7 @@ public class Convenio {
 	/**
 	 * @param urlConsulta the urlConsulta to set
 	 */
+	@XmlElement
 	public void setUrlConsulta(String urlConsulta) {
 		this.urlConsulta = urlConsulta;
 	}
@@ -76,6 +82,7 @@ public class Convenio {
 	/**
 	 * @param templateConsulta the templateConsulta to set
 	 */
+	@XmlElement
 	public void setTemplateConsulta(String templateConsulta) {
 		this.templateConsulta = templateConsulta;
 	}
@@ -90,6 +97,7 @@ public class Convenio {
 	/**
 	 * @param urlPago the urlPago to set
 	 */
+	@XmlElement
 	public void setUrlPago(String urlPago) {
 		this.urlPago = urlPago;
 	}
@@ -104,6 +112,7 @@ public class Convenio {
 	/**
 	 * @param templatePago the templatePago to set
 	 */
+	@XmlElement
 	public void setTemplatePago(String templatePago) {
 		this.templatePago = templatePago;
 	}
@@ -118,6 +127,7 @@ public class Convenio {
 	/**
 	 * @param urlCompensacion the urlCompensacion to set
 	 */
+	@XmlElement
 	public void setUrlCompensacion(String urlCompensacion) {
 		this.urlCompensacion = urlCompensacion;
 	}
@@ -132,6 +142,7 @@ public class Convenio {
 	/**
 	 * @param templateCompensacion the templateCompensacion to set
 	 */
+	@XmlElement
 	public void setTemplateCompensacion(String templateCompensacion) {
 		this.templateCompensacion = templateCompensacion;
 	}
@@ -146,6 +157,7 @@ public class Convenio {
 	/**
 	 * @param isREST the isREST to set
 	 */
+	@XmlElement
 	public void setREST(boolean isREST) {
 		this.isREST = isREST;
 	}
