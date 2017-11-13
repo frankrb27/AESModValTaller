@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/object/Cliente.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/object/ResultadoValidacion.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/service/AutenticacionInterface.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/service/Autenticacion_BindingImpl.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/service/Autenticacion_BindingSkeleton.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/service/Autenticacion_BindingStub.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/service/ServicioAutenticacion.java=UTF-8
+encoding//src/main/java/co/edu/javeriana/modval/service/ServicioAutenticacionLocator.java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8

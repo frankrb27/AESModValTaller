@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:pay="http://www.sap.com/schemas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.sap.com/wsdl/Autenticacion.wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Autenticacion" targetNamespace="http://www.sap.com/wsdl/Autenticacion.wsdl">
+
+	<types>
+		<xsd:schema>
+			<xsd:import namespace="http://www.sap.com/schemas" schemaLocation="../xsd/Autenticacion.xsd"/>
+		</xsd:schema>
+	</types>
+
+	<message name="Validacion">
+		<part element="pay:Cliente" name="Input"/>
+	</message>
+
+	<message name="RespuestaValidacion">
+		<part element="pay:ResultadoValidacion" name="Input"/>
+	</message>
+
+	<portType name="AutenticacionInterface">
+		<operation name="Validar">
+			<input message="tns:Validacion"/>
+			<output message="tns:RespuestaValidacion"/>
+		</operation>
+	</portType>
+
+	<binding name="Autenticacion_Binding" type="tns:AutenticacionInterface">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="Validar">
+			<soap:operation soapAction="validar"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+
+	<service name="ServicioAutenticacion">
+		<documentation>WSDL File for Autenticacion</documentation>
+		<port binding="tns:Autenticacion_Binding" name="AutenticacionInterface">
+			<soap:address location="http://tempuri.org/SAPAutenticacion/services/AutenticacionInterface"/>
+		</port>
+	</service>
+</definitions>
