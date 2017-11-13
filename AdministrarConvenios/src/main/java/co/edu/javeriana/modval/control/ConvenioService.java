@@ -10,22 +10,22 @@ public class ConvenioService {
 		if(idConvenio.equals("10000")){
 		return new Convenio(
 				"10000",
-				"http://localhost:8080/servicios/pagos/v1/payments/",
+				"http://localhost:9099/servicios/pagos/v1/payments/",
 				"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"factura\"><factura><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><valorFactura><xsl:value-of select=\"valorFactura\"/></valorFactura></factura></xsl:template></xsl:stylesheet>",
-				"http://localhost:8080/servicios/pagos/v1/payments/10000?idFactura=",
+				"http://localhost:9099/servicios/pagos/v1/payments/10000?idFactura=",
 				"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
-				//"http://localhost:8080/servicios/pagos/v1/payments/10000?idFactura=",
+				//"http://localhost:9099/servicios/pagos/v1/payments/10000?idFactura=",
 				null,
 				"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
 				true);
 		}else if(idConvenio.equals("20000")){
 			return new Convenio(
 					"20000",
-					"http://localhost:8080/servicios/pagos/v1/payments/",
+					"http://localhost:9090/servicios/pagos/v1/payments/",
 					"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"factura\"><factura><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><valorFactura><xsl:value-of select=\"valorFactura\"/></valorFactura></factura></xsl:template></xsl:stylesheet>",
-					"http://localhost:8080/servicios/pagos/v1/payments/10000?idFactura=",
+					"http://localhost:9090/servicios/pagos/v1/payments/10000?idFactura=",
 					"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
-					"http://localhost:8080/servicios/pagos/v1/payments/10000?idFactura=",
+					"http://localhost:9090/servicios/pagos/v1/payments/10000?idFactura=",
 					"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
 					true);
 			
