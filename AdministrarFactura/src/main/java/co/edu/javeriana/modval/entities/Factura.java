@@ -1,9 +1,15 @@
 package co.edu.javeriana.modval.entities;
 
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Factura", propOrder = {
+        "idFactura","valorFactura"
+})
 public class Factura {
 
     private String idFactura;
@@ -42,7 +48,6 @@ public class Factura {
 	/**
 	 * @param idFactura the idFactura to set
 	 */
-	@XmlElement
 	public void setIdFactura(String idFactura) {
 		this.idFactura = idFactura;
 	}
@@ -55,11 +60,9 @@ public class Factura {
 	/**
 	 * @param valorFactura the valorFactura to set
 	 */
-	@XmlElement
 	public void setValorFactura(double valorFactura) {
 		this.valorFactura = valorFactura;
 	}
-	
 	
 	public String toString(){
 		return "idFactura: "+idFactura+","+"valorFactura: "+valorFactura;

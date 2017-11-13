@@ -20,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
 
+import co.edu.javeriana.modval.entities.Compensacion;
 import co.edu.javeriana.modval.entities.Convenio;
 import co.edu.javeriana.modval.entities.Factura;
 
@@ -39,6 +40,19 @@ public class AdministrarFacturaService {
 		Convenio convenio = restTemplate.getForObject(url.concat(idConvenio), Convenio.class); 
 		return convenio;
 	}
+	
+	/**
+	 * Consultar convenio
+	 * @param url
+	 * @param idConvenio
+	 * @return
+	 */
+	public Compensacion getCompensacion(String url, String idConvenio, String idFactura){
+		RestTemplate restTemplate = new RestTemplate();
+		Compensacion compensacion = restTemplate.getForObject(url.concat("idConvenio="+idConvenio).concat("&idFactura="+idFactura), Compensacion.class); 
+		return compensacion;
+	}	
+	
 	/**
 	 * Invocar servicio REST
 	 * @param url
