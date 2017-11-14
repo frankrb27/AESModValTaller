@@ -36,7 +36,7 @@ public class AdministrarFacturaResource {
 		try{
 			//Consultar convenio
 			Convenio convenio = consultarFacturaService.getConvenio(TS_URL_CONVENIOS, idFactura.substring(0,5));
-			if(convenio!=null && convenio.getUrlConsulta()!=null){
+			if(convenio!=null && convenio.getUrlConsulta()!=null && convenio.isREST()){
 				//Invocar servicio
 				String responseXML = consultarFacturaService.invokeRest(convenio.getUrlConsulta().concat(idFactura.substring(5)), HttpMethod.GET);
 				Factura factura = consultarFacturaService.getFactura(responseXML,convenio.getTemplateConsulta());
@@ -57,7 +57,7 @@ public class AdministrarFacturaResource {
 		try{
 			//Consultar convenio
 			Convenio convenio = consultarFacturaService.getConvenio(TS_URL_CONVENIOS, idFactura.substring(0,5));
-			if(convenio!=null && convenio.getUrlPago()!=null){
+			if(convenio!=null && convenio.getUrlPago()!=null && convenio.isREST()){
 				//Invocar servicio
 				String responseXML = consultarFacturaService.invokeRest(convenio.getUrlConsulta().concat(idFactura.substring(5)), HttpMethod.GET);
 				Factura factura = consultarFacturaService.getFactura(responseXML,convenio.getTemplateConsulta());
@@ -78,7 +78,7 @@ public class AdministrarFacturaResource {
 		try{
 			//Consultar convenio
 			Convenio convenio = consultarFacturaService.getConvenio(TS_URL_CONVENIOS, idFactura.substring(0,5));
-			if(convenio!=null && convenio.getUrlCompensacion()!=null){
+			if(convenio!=null && convenio.getUrlCompensacion()!=null && convenio.isREST()){
 				//Invocar servicio
 				String responseXML = consultarFacturaService.invokeRest(convenio.getUrlConsulta().concat(idFactura.substring(5)), HttpMethod.GET);
 				Factura factura = consultarFacturaService.getFactura(responseXML,convenio.getTemplateConsulta());
