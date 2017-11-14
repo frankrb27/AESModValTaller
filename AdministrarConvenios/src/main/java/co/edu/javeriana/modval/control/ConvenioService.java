@@ -53,11 +53,11 @@ public class ConvenioService {
 	            listConvenios.add(new Convenio(convenio[0],
 	            		convenio[1],
 	            		convenio[2],
-	            		convenio[3].equals("null")?null:convenio[2],
-	            		convenio[4].equals("null")?null:convenio[3],
-	            		convenio[5].equals("null")?null:convenio[4],
-	            		convenio[6].equals("null")?null:convenio[5],
-	            		convenio[7].equals("null")?null:convenio[6],
+	            		convenio[3].equals("null")?null:convenio[3],
+	            		convenio[4].equals("null")?null:convenio[4],
+	            		convenio[5].equals("null")?null:convenio[5],
+	            		convenio[6].equals("null")?null:convenio[6],
+	            		convenio[7].equals("null")?null:convenio[7],
 	            		convenio[8].equals("true")));
 	         }
 	      }
