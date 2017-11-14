@@ -41,3 +41,4 @@ URL de acceso: http://localhost:9010/banco/convenio/v1/factura/
 
 Capacidades: consultarFactura(idFactura), pagarFactura(idFactura, valorFactura, idCuenta), compensarFactura(idFactura)
 
+###### Para mayor información acerca de los servicios ver documento de inventario de servicios (Inventario de servicios Taller.xlsx)
