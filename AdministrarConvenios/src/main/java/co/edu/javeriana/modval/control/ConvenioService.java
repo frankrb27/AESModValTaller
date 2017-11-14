@@ -1,47 +1,90 @@
 package co.edu.javeriana.modval.control;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import co.edu.javeriana.modval.entities.Convenio;
 
 @Service
 public class ConvenioService {
+	List<Convenio> listConvenios = null;
+	
+	/**
+	 * Constructor para cargar convenios existentes
+	 */
+	public ConvenioService() {		
+		cargarConvenios();
+	}
+	
+	/**
+	 * Cargar convenios registrados en el archivo
+	 */
+	public void cargarConvenios() {
+		File archivo = null;
+	      FileReader fr = null;
+	      BufferedReader br = null;
+
+	      try {
+	         // Apertura del fichero y creacion de BufferedReader para poder
+	         // hacer una lectura comoda (disponer del metodo readLine()).
+	         archivo = new File ("Convenios/convenios.txt");
+	         fr = new FileReader (archivo);
+	         br = new BufferedReader(fr);
+	         listConvenios = new ArrayList<Convenio>();
+	         // Lectura del fichero
+	         String linea;
+	         while((linea=br.readLine())!=null) {
+	            String convenio[] = linea.split("##");
+	            System.out.println("[0]"+convenio[0]);
+	            System.out.println("[1]"+convenio[1]);
+	            System.out.println("[2]"+convenio[2]);
+	            System.out.println("[3]"+convenio[3]);
+	            System.out.println("[4]"+convenio[4]);
+	            System.out.println("[5]"+convenio[5]);
+	            System.out.println("[6]"+convenio[6]);
+	            System.out.println("[7]"+convenio[7]);
+	            listConvenios.add(new Convenio(convenio[0],
+	            		convenio[1],
+	            		convenio[2].equals("null")?null:convenio[2],
+	            		convenio[3].equals("null")?null:convenio[3],
+	            		convenio[4].equals("null")?null:convenio[4],
+	            		convenio[5].equals("null")?null:convenio[5],
+	            		convenio[6].equals("null")?null:convenio[6],
+	            		convenio[7].equals("true")));
+	         }
+	      }
+	      catch(Exception e){
+	         e.printStackTrace();
+	      }finally{
+	         // En el finally cerramos el fichero, para asegurarnos
+	         // que se cierra tanto si todo va bien como si salta 
+	         // una excepcion.
+	         try{                    
+	            if( null != fr ){   
+	               fr.close();     
+	            }                  
+	         }catch (Exception e2){ 
+	            e2.printStackTrace();
+	         }
+	      }
+	}
+	
+	/**
+	 * Retornar convenio consultado
+	 * @param idConvenio
+	 * @return
+	 */
 	public Convenio getConvenio(String idConvenio){
-		if(idConvenio.equals("10000")){
-		return new Convenio(
-				"10000",
-				"http://localhost:9099/servicios/pagos/v1/payments/",
-				"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"factura\"><factura><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><valorFactura><xsl:value-of select=\"valorFactura\"/></valorFactura></factura></xsl:template></xsl:stylesheet>",
-				"http://localhost:9099/servicios/pagos/v1/payments/10000?idFactura=",
-				"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
-				//"http://localhost:9099/servicios/pagos/v1/payments/10000?idFactura=",
-				null,
-				"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
-				true);
-		}else if(idConvenio.equals("20000")){
-			return new Convenio(
-					"20000",
-					"http://localhost:9090/servicios/pagos/v1/payments/",
-					"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"factura\"><factura><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><valorFactura><xsl:value-of select=\"valorFactura\"/></valorFactura></factura></xsl:template></xsl:stylesheet>",
-					"http://localhost:9090/servicios/pagos/v1/payments/10000?idFactura=",
-					"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
-					"http://localhost:9090/servicios/pagos/v1/payments/10000?idFactura=",
-					"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
-					true);
-			
-		}else if(idConvenio.equals("30000")){
-			return new Convenio(
-					"30000",
-					"http://localhost:7070/w1-soap-svr/PagosServiceService",
-					"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><xsl:stylesheet xmlns:xsl=\\\"http://www.w3.org/1999/XSL/Transform\\\" version=\\\"1.0\\\" xmlns:S=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\"  xmlns:A=\\\"http://www.servicios.co/pagos/schemas\\\"><xsl:output method=\\\"xml\\\" omit-xml-declaration=\\\"no\\\" encoding=\\\"utf-8\\\" indent=\\\"yes\\\" /><xsl:template match=\\\"/\\\"><factura><idFactura><xsl:value-of select=\\\"S:Envelope/S:Body/A:ResultadoConsulta/A:referenciaFactura/A:referenciaFactura\\\" /></idFactura><valorFactura><xsl:value-of select=\\\"S:Envelope/S:Body/A:ResultadoConsulta/A:totalPagar\\\" /></valorFactura></factura></xsl:template></xsl:stylesheet>",
-					"http://localhost:7070/w1-soap-svr/PagosServiceService",
-					"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
-					"http://localhost:7070/w1-soap-svr/PagosServiceService",
-					"<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:template match=\"resultado\"><respuesta><idFactura><xsl:value-of select=\"idFactura\"/></idFactura><mensaje><xsl:value-of select=\"mensaje\"/></mensaje></respuesta></xsl:template></xsl:stylesheet>",
-					false);
-			
-		}else{
-			return new Convenio();
+		for(Convenio convenio : listConvenios) {
+			if(convenio.getIdConvenio().equals(idConvenio)) {
+				return convenio;
+			}
 		}
+		return new Convenio();
 	}
 }

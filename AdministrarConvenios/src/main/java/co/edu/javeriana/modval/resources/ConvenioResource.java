@@ -24,7 +24,7 @@ public class ConvenioResource {
 		try{
 			//Consultar convenio
 			Convenio convenio = pagoConvenioService.getConvenio(idConvenio);
-			if(convenio!=null && convenio.getIdConvenio()!=null){
+			if(convenio!=null && convenio.getIdConvenio()!=null && !convenio.getIdConvenio().equals("null")){
 				return convenio;
 			}else{
 				return null;
@@ -45,11 +45,27 @@ public class ConvenioResource {
 			if(convenio!=null){
 				return new Respuesta(idConvenio, "Convenio eliminado");
 			}else{
+				System.out.println("Convenio no existe");
 				return new Respuesta(idConvenio, "Convenio no existe");
 			}
 		}catch(Exception e){
 			e.printStackTrace();
+			System.out.println("Error al eliminar el convenio");
+			System.out.println(e);
 			return new Respuesta(idConvenio, "Error al eliminar el convenio");
+		}
+	}	
+	
+	@RequestMapping(path = "convenios/recargar", method = RequestMethod.GET,
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	public Respuesta recargar() {
+		try{
+			//Consultar convenio
+			pagoConvenioService.cargarConvenios();
+			return new Respuesta(null,"Convenios recargados");
+		}catch(Exception e){
+			e.printStackTrace();
+			return new Respuesta(null,"Error al recargar los convenios");
 		}
 	}	
 }
