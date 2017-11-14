@@ -22,6 +22,7 @@ import com.google.gson.Gson;
 
 import co.edu.javeriana.modval.entities.Compensacion;
 import co.edu.javeriana.modval.entities.Convenio;
+import co.edu.javeriana.modval.entities.Cuenta;
 import co.edu.javeriana.modval.entities.Factura;
 import co.edu.javeriana.modval.entities.Respuesta;
 
@@ -41,6 +42,18 @@ public class AdministrarFacturaService {
 		Convenio convenio = restTemplate.getForObject(url.concat(idConvenio), Convenio.class); 
 		return convenio;
 	}
+	
+	/**
+	 * Consultar cuenta
+	 * @param url
+	 * @param idCuenta
+	 * @return
+	 */
+	public Cuenta getCuenta (String url, String idCuenta){
+		RestTemplate restTemplate = new RestTemplate();
+		Cuenta cuenta = restTemplate.getForObject(url.concat(idCuenta), Cuenta.class); 
+		return cuenta;
+	}	
 	
 	/**
 	 * Consultar convenio
