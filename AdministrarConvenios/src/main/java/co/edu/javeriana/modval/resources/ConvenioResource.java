@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.javeriana.modval.control.ConvenioService;
 import co.edu.javeriana.modval.entities.Convenio;
+import co.edu.javeriana.modval.entities.ListConvenio;
 import co.edu.javeriana.modval.entities.Respuesta;
 
 @RestController
@@ -18,6 +19,23 @@ public class ConvenioResource {
 	@Autowired
 	private ConvenioService pagoConvenioService;
 
+	@RequestMapping(path = "convenios", method = RequestMethod.GET,
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	public ListConvenio consultarConvenio() {
+		try{
+			//Consultar convenio
+			ListConvenio convenio = pagoConvenioService.getConvenio();
+			if(convenio!=null){
+				return convenio;
+			}else{
+				return null;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}	
+	
 	@RequestMapping(path = "convenios/{idConvenio}", method = RequestMethod.GET,
 			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	public Convenio consultarConvenio(@PathVariable("idConvenio") String idConvenio) {

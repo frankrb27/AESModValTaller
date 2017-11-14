@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import co.edu.javeriana.modval.entities.Convenio;
+import co.edu.javeriana.modval.entities.ListConvenio;
 
 @Service
 public class ConvenioService {
@@ -87,4 +88,18 @@ public class ConvenioService {
 		}
 		return new Convenio();
 	}
+	
+	/**
+	 * Retornar lista de convenio
+	 * @return
+	 */
+	public ListConvenio getConvenio(){
+		ListConvenio listConvenio = new ListConvenio();
+		List<Convenio> convenios = new ArrayList<Convenio>();
+		for(Convenio convenio : listConvenios) {
+				convenios.add(convenio);
+		}
+		listConvenio.setConvenio(convenios);
+		return listConvenio;
+	}	
 }
