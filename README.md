@@ -6,11 +6,12 @@
 3. Frank Rodriguez
 
 
-Para la solución de ese ejercicio, fue necesaria el desarrollo de los siguientes servicios rest:
+Para la solución de ese ejercicio, fue necesario el desarrollo de los siguientes servicios rest con las siguientes capacidades:
 
 # Administrar convenios
 Descripción: Permite realizar la administración (Consulta, eliminación y recarga) de los convenios.
 URL de acceso: http://localhost:9000/banco/convenio/v1/convenios/ 
+Capacidades: consultarConvenios(), consultarConvenio(idConvenio), eliminarConvenio(idConvenio), recargar().
 
 # Administrar factura
 Descripción: Permite realizar:
@@ -20,11 +21,14 @@ Descripción: Permite realizar:
    
 Además, este servicio es el encargado de direccionar las peticiones a la URL del servicio del proveedor según el identificador del convenio, la transformación de los mensajes de respuesta se realiza mediante XSLT.
 URL de acceso: http://localhost:9010/banco/convenio/v1/factura/ 
+Capacidades: consultarFactura(idFactura), pagarFactura(idFactura, valorFactura, idCuenta), compensarFactura(idFactura)
 
 # Administrar compensacion
 Descripción: Permite notificar al área encargada sobre la realización de una compensación del pago de una factura que se debe realizar de forma manual en el caso que el servicio del proveedor no soporte esta capacidad.
 URL de acceso: http://localhost:9020/banco/convenio/v1/compensacion/ 
+Capacidades: generarCompensacion(idFactura)
 
 # Administrar cuentas
 Descripción: Permite consultar las cuentas asociadas a un cliente y los saldos de estas.
 URL de acceso: http://localhost:9040/banco/convenio/v1/cuentas/
+Capacidades: consultarCuenta(idCuenta), consultarCuentaPorCliente(numeroDocumento)
