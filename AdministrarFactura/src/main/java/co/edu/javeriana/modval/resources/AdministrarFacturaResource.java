@@ -22,15 +22,15 @@ public class AdministrarFacturaResource {
 	@Autowired
 	private AdministrarFacturaService consultarFacturaService;
 
-	private static final String TS_SERVER = "localhost";
+	private static final String TS_SERVER = "127.0.0.1";
 	private static final int TS_PORT = 9000;
 	private static String TS_URL_CONVENIOS = String.format("http://%s:%d/banco/convenio/v1/convenios/", TS_SERVER, TS_PORT);
 
-	private static final String TS_SERVER_COMPENSACION = "localhost";
+	private static final String TS_SERVER_COMPENSACION = "127.0.0.1";
 	private static final int TS_PORT_COMPENSACION = 9020;
 	private static String TS_URL_COMPENSACION = String.format("http://%s:%d/banco/convenio/v1/compensacion?", TS_SERVER_COMPENSACION, TS_PORT_COMPENSACION);
 
-	private static final String TS_SERVER_CUENTA = "localhost";
+	private static final String TS_SERVER_CUENTA = "127.0.0.1";
 	private static final int TS_PORT_CUENTA = 9040;
 	private static String TS_URL_CUENTA = String.format("http://%s:%d/banco/convenio/v1/cuentas/", TS_SERVER_CUENTA, TS_PORT_CUENTA);
 

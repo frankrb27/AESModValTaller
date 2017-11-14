@@ -26,7 +26,7 @@ public class WSAutenticacion_ServiceLocator extends org.apache.axis.client.Servi
     }
 
     // Use to get a proxy class for WSAutenticacion_Port
-    private java.lang.String WSAutenticacion_Port_address = "http://localhost:9030/sap-autenticacion/WSAutenticacion/";
+    private java.lang.String WSAutenticacion_Port_address = "http://127.0.0.1:9030/sap-autenticacion/WSAutenticacion/";
 
     public java.lang.String getWSAutenticacion_PortAddress() {
         return WSAutenticacion_Port_address;
