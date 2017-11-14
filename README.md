@@ -1,9 +1,9 @@
 # AESModValTaller - Banco ABC
 
 # Integrantes
-1. Edwin Moreno Cristancho
-2. Felipe Castellanos Arias
-3. Frank Rodriguez
+- Edwin Moreno 
+- Felipe Castellanos 
+- Frank Rodriguez
 
 
 Para la solución de ese ejercicio, fue necesario el desarrollo de los siguientes servicios rest con las siguientes capacidades:
