@@ -49,14 +49,16 @@ public class ConvenioService {
 	            System.out.println("[5]"+convenio[5]);
 	            System.out.println("[6]"+convenio[6]);
 	            System.out.println("[7]"+convenio[7]);
+	            System.out.println("[8]"+convenio[8]);
 	            listConvenios.add(new Convenio(convenio[0],
 	            		convenio[1],
-	            		convenio[2].equals("null")?null:convenio[2],
-	            		convenio[3].equals("null")?null:convenio[3],
-	            		convenio[4].equals("null")?null:convenio[4],
-	            		convenio[5].equals("null")?null:convenio[5],
-	            		convenio[6].equals("null")?null:convenio[6],
-	            		convenio[7].equals("true")));
+	            		convenio[2],
+	            		convenio[3].equals("null")?null:convenio[2],
+	            		convenio[4].equals("null")?null:convenio[3],
+	            		convenio[5].equals("null")?null:convenio[4],
+	            		convenio[6].equals("null")?null:convenio[5],
+	            		convenio[7].equals("null")?null:convenio[6],
+	            		convenio[8].equals("true")));
 	         }
 	      }
 	      catch(Exception e){

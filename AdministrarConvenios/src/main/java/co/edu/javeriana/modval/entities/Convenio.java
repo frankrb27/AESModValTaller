@@ -8,11 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Convenio", propOrder = {
-        "idConvenio","urlConsulta","templateConsulta","urlPago","templatePago","urlCompensacion","templateCompensacion","isREST"
+        "idConvenio","nombreConvenio","urlConsulta","templateConsulta","urlPago","templatePago","urlCompensacion","templateCompensacion","isREST"
 })
 public class Convenio {
 
 	private String idConvenio;
+	private String nombreConvenio;
 	private String urlConsulta;
 	private String templateConsulta;
 	private String urlPago;
@@ -29,6 +30,7 @@ public class Convenio {
     /**
      * Constructor
      * @param idConvenio
+     * @param nombreConvenio
      * @param urlConsulta
      * @param templateConsulta
      * @param urlPago
@@ -37,8 +39,9 @@ public class Convenio {
      * @param templateCompensacion
      * @param isREST
      */
-    public Convenio(String idConvenio, String urlConsulta, String templateConsulta, String urlPago, String templatePago, String urlCompensacion, String templateCompensacion, boolean isREST) {
+    public Convenio(String idConvenio, String nombreConvenio, String urlConsulta, String templateConsulta, String urlPago, String templatePago, String urlCompensacion, String templateCompensacion, boolean isREST) {
         this.idConvenio = idConvenio;
+        this.nombreConvenio = nombreConvenio;
         this.urlConsulta = urlConsulta;
         this.templateConsulta = templateConsulta;
         this.urlPago = urlPago;
@@ -60,6 +63,20 @@ public class Convenio {
 	 */
 	public void setIdConvenio(String idConvenio) {
 		this.idConvenio = idConvenio;
+	}
+
+	/**
+	 * @return the nombreConvenio
+	 */
+	public String getNombreConvenio() {
+		return nombreConvenio;
+	}
+
+	/**
+	 * @param nombreConvenio the nombreConvenio to set
+	 */
+	public void setNombreConvenio(String nombreConvenio) {
+		this.nombreConvenio = nombreConvenio;
 	}
 
 	/**
