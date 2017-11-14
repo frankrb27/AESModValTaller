@@ -59,9 +59,9 @@ public class AdministrarFacturaResource {
 			Convenio convenio = consultarFacturaService.getConvenio(TS_URL_CONVENIOS, idFactura.substring(0,5));
 			if(convenio!=null && convenio.getUrlPago()!=null && convenio.isREST()){
 				//Invocar servicio
-				String responseXML = consultarFacturaService.invokeRest(convenio.getUrlConsulta().concat(idFactura.substring(5)), HttpMethod.GET);
-				Factura factura = consultarFacturaService.getFactura(responseXML,convenio.getTemplateConsulta());
-				return new Respuesta(factura);
+				String responseXML = consultarFacturaService.invokeRest(convenio.getUrlPago().concat(idFactura.substring(5)), HttpMethod.POST);
+				Respuesta respuesta = consultarFacturaService.getRespuesta(responseXML,convenio.getTemplatePago());
+				return respuesta;
 			}else{
 				return new Respuesta("Factura no existe");
 			}
@@ -80,9 +80,9 @@ public class AdministrarFacturaResource {
 			Convenio convenio = consultarFacturaService.getConvenio(TS_URL_CONVENIOS, idFactura.substring(0,5));
 			if(convenio!=null && convenio.getUrlCompensacion()!=null && convenio.isREST()){
 				//Invocar servicio
-				String responseXML = consultarFacturaService.invokeRest(convenio.getUrlConsulta().concat(idFactura.substring(5)), HttpMethod.GET);
-				Factura factura = consultarFacturaService.getFactura(responseXML,convenio.getTemplateConsulta());
-				return new Respuesta(factura);
+				String responseXML = consultarFacturaService.invokeRest(convenio.getUrlCompensacion().concat(idFactura.substring(5)), HttpMethod.DELETE);
+				Respuesta respuesta = consultarFacturaService.getRespuesta(responseXML,convenio.getTemplateCompensacion());
+				return respuesta;
 			}else{
 				Compensacion compensacion = consultarFacturaService.getCompensacion(TS_URL_COMPENSACION, idFactura.substring(0,5), idFactura.substring(5));
 				return new Respuesta("El convenio no soporta la operación de compensación, se ha enviado la solicitud al área correspondiente. Número de radicado "+compensacion.getIdRadicado());

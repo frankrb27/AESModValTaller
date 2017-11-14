@@ -23,6 +23,7 @@ import com.google.gson.Gson;
 import co.edu.javeriana.modval.entities.Compensacion;
 import co.edu.javeriana.modval.entities.Convenio;
 import co.edu.javeriana.modval.entities.Factura;
+import co.edu.javeriana.modval.entities.Respuesta;
 
 @Service
 public class AdministrarFacturaService {
@@ -82,6 +83,21 @@ public class AdministrarFacturaService {
 		String response = getResponse(xml, template);
 		response = response.replace("{\"factura\" : ", "").replace("}}", "}");
 		return (Factura)getObject(response, Factura.class);
+	}
+
+	/**
+	 * Obtener objeto Respuesta
+	 * @param xml
+	 * @param template
+	 * @return
+	 * @throws Exception
+	 */
+	public Respuesta getRespuesta (String xml, String template) throws Exception{
+		String response = getResponse(xml, template);
+		System.out.println(xml);
+		System.out.println(template);
+		response = response.replace("{\"respuesta\" : ", "").replace("}}", "}");
+		return (Respuesta)getObject(response, Respuesta.class);
 	}	
 	
 	/**
@@ -99,6 +115,9 @@ public class AdministrarFacturaService {
 	    InputStream isXSLTemplate = new ByteArrayInputStream(template.getBytes("UTF-8"));
 	    StreamSource stylesource = new StreamSource(isXSLTemplate);
 	    
+		System.out.println(xml);
+		System.out.println(template);
+		
 	    //Transformar objeto
 	    TransformerFactory factory = TransformerFactory.newInstance();
 	    Transformer transformer = factory.newTransformer(stylesource);
