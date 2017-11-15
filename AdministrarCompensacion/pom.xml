@@ -35,12 +35,17 @@
 		</dependency>
 	</dependencies>
 	<build>
-	 <finalName>rest-service-admon-compensacion</finalName>
+		<finalName>rest-service-admon-compensacion</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<properties>
+						<java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
+					</properties>
+				</configuration>
 			</plugin>
 		</plugins>
-	</build>	
+	</build>
 </project>

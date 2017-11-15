@@ -4,3 +4,4 @@ ENV WORKSPACE /opt
 WORKDIR ${WORKSPACE}
 COPY target/rest-service-admon-compensacion.jar .
 ENTRYPOINT java -jar rest-service-admon-compensacion.jar
+EXPOSE 9020

@@ -4,3 +4,4 @@ ENV WORKSPACE /opt
 WORKDIR ${WORKSPACE}
 COPY target/rest-service-admon-cuentas.jar .
 ENTRYPOINT java -jar rest-service-admon-cuentas.jar
+EXPOSE 9040

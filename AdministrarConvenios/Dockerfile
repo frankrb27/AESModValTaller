@@ -4,3 +4,4 @@ ENV WORKSPACE /opt
 WORKDIR ${WORKSPACE}
 COPY target/rest-service-admon-convenios.jar .
 ENTRYPOINT java -jar rest-service-admon-convenios.jar
+EXPOSE 9000
