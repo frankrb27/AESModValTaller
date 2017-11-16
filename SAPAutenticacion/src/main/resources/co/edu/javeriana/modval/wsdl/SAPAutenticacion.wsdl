@@ -35,7 +35,7 @@
   <service name="WSAutenticacion_Service">
     <documentation>WSDL File for WSAutenticacion</documentation>
     <port binding="tns:WSAutenticacion_Binding" name="WSAutenticacion_Port">
-      <soap:address location="http://127.0.0.1:9030/sap-autenticacion/WSAutenticacion/"/>
+      <soap:address location="http://localhost:9030/sap-autenticacion/WSAutenticacion/"/>
     </port>
   </service>
 </definitions>
