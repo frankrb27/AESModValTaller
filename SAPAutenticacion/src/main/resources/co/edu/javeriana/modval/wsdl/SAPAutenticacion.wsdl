@@ -1,4 +1,12 @@
-<definitions name="WSAutenticacion" targetNamespace="http://www.examples.com/wsdl/WSAutenticacion.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.examples.com/wsdl/WSAutenticacion.wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/"
+  targetNamespace="http://www.sap.servicio.com/wsdl/WSAutenticacion.wsdl"
+  xmlns:tns="http://www.sap.servicio.com/wsdl/WSAutenticacion.wsdl"
+  name="WSAutenticacion">
   <message name="WSAutenticacionRequest">
     <part name="usuario" type="xsd:string"/>
     <part name="clave" type="xsd:string"/>
@@ -17,10 +25,10 @@
     <operation name="autenticar">
       <soap:operation soapAction="autenticar"/>
       <input>
-        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:examples:wsautenticacion" use="encoded"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:examples:wsautenticacion" use="encoded"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
   </binding>
