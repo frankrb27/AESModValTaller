@@ -52,7 +52,7 @@ Además, este servicio es el encargado de direccionar las peticiones a la URL de
 **URL de acceso:** http://localhost:9050/banco/convenio/v1/utilitario
 **Capacidades:** generarNotificacion(idFactura, mensaje)
 
-###### Para mayor información acerca de los servicios ver documento de inventario de servicios (Inventario de servicios Taller.xlsx)
+#### Para mayor información acerca de los servicios ver documento de inventario de servicios (Inventario de servicios Taller.xlsx)
 
 # ¿Como probar?
 ## Configurar el ambiente
@@ -74,22 +74,22 @@ Además, este servicio es el encargado de direccionar las peticiones a la URL de
 ## Pasos para realizar pagos y compensación
 1. Consumir la capacidad **authorization** del servicio SAPAuthorization mediante SoapUI
   - El proyecto Soap se encuentra en la siguiente ruta: SAPAuthorization/SAPAuthorization-soapui-project.xml
-  ###### Los usuarios configurados son: 101010, 101011, 101012 y 101013. Usuario y contraseña son los iguales
+  #### Los usuarios configurados son: 101010, 101011, 101012 y 101013. Usuario y contraseña son los iguales
 2. Consultar la capacidad de **consultarConvenios** del servicio AdministarConvenios mediante Postman o línea de comandos para obtener el listado de convenios disponibles para realizar el pago en línea
   - curl -i -H "Accept: application/xml" -H "Content-type: application/xml" -X GET http://localhost:9000/banco/convenio/v1/convenios
   - curl -i -H "Accept: application/xml" -H "Content-type: application/xml" -X GET http://localhost:9000/banco/convenio/v1/convenios/10000
 3. Consumir la capacidad de **consultarFactura** del servicio AdministarFactura mediante Postman o línea de comandos
   - curl -i -H "Accept: application/xml" -H "Content-type: application/xml" -X GET http://localhost:9010/banco/convenio/v1/factura/10000987
-  ###### Se realiza una composición con la capacidad **consultarConvenio** del servicio AdministarConvenios para obtener los datos del convenio al cual pertenece la factura
+  #### Se realiza una composición con la capacidad **consultarConvenio** del servicio AdministarConvenios para obtener los datos del convenio al cual pertenece la factura
 4. Consumir la capacidad de **pagarFactura** del servicio AdministarFactura mediante Postman o línea de comandos para realizar el pago de una factura
   - curl -i -H "Accept: application/xml" -H "Content-type: application/xml" -X POST http://localhost:9010/banco/convenio/v1/factura/10000/987/023986
-  ###### Se realiza una composición con la capacidad **consultarConvenio** del servicio AdministarConvenios para obtener la URL en la cual se encuentra expuesto el servicio de pagos del proveedor del convenio
-  ###### Posteriormente de realizar el pago, este servicio realiza una composición con el servicio de **generarNotificacion** del servicio Utilitarios para enviar la confirmación del pago del convenio, _(ver log de la ejecución del servicio)_
+  #### Se realiza una composición con la capacidad **consultarConvenio** del servicio AdministarConvenios para obtener la URL en la cual se encuentra expuesto el servicio de pagos del proveedor del convenio
+  #### Posteriormente de realizar el pago, este servicio realiza una composición con el servicio de **generarNotificacion** del servicio Utilitarios para enviar la confirmación del pago del convenio, _(ver log de la ejecución del servicio)_
 5. Consumir la capacidad de **compensarFactura** del servicio AdministarFactura mediante Postman o línea de comandos para compensar el pago de una factura
   - curl -i -H "Accept: application/xml" -H "Content-type: application/xml" -X DELETE http://127.0.0.1:9010/banco/convenio/v1/factura/10000987
-  ###### Se realiza una composición con la capacidad  **consultarConvenio** del servicio AdministarConvenios para obtener la URL en la cual se encuentra expuesto el servicio de compensación del proveedor del convenio
-  ###### En el caso que el proveedor del convenio no soporte esta capacidad, se realiza otra composición con la capacidad **generarCompensacion** del servicio AdministarCompensacion con el fin de crear un ticket al área correspondiente para que se realice la compensación de forma manual   
-  ###### Posteriormente de realizar la compensación o la creación del ticket, este servicio envía una notificación al cliente mediante la composición con la capacidad **generarNotificacion** del servicio Utilitarios para enviar la confirmación del estado de la compensación del convenio, _(ver log de la ejecución del servicio)_
+  #### Se realiza una composición con la capacidad  **consultarConvenio** del servicio AdministarConvenios para obtener la URL en la cual se encuentra expuesto el servicio de compensación del proveedor del convenio
+  #### En el caso que el proveedor del convenio no soporte esta capacidad, se realiza otra composición con la capacidad **generarCompensacion** del servicio AdministarCompensacion con el fin de crear un ticket al área correspondiente para que se realice la compensación de forma manual   
+  #### Posteriormente de realizar la compensación o la creación del ticket, este servicio envía una notificación al cliente mediante la composición con la capacidad **generarNotificacion** del servicio Utilitarios para enviar la confirmación del estado de la compensación del convenio, _(ver log de la ejecución del servicio)_
   
 ## Desmontar el ambiente
 1. Ingresar a cada una de las rutas para detener y eliminar los servicios REST y SOAP
