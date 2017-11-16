@@ -34,6 +34,10 @@ public class AdministrarFacturaResource {
 	private static final int TS_PORT_CUENTA = 9040;
 	private static String TS_URL_CUENTA = String.format("http://%s:%d/banco/convenio/v1/cuentas/", TS_SERVER_CUENTA, TS_PORT_CUENTA);
 
+	private static final String TS_SERVER_UTILITARIO = "127.0.0.1";
+	private static final int TS_PORT_UTILITARIO = 9050;
+	private static String TS_URL_UTILITARIO = String.format("http://%s:%d/banco/convenio/v1/utilitario/", TS_SERVER_UTILITARIO, TS_PORT_UTILITARIO);	
+	
 	@RequestMapping(path = "factura/{idFactura}", method = RequestMethod.GET,
 			consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
 			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
@@ -70,6 +74,8 @@ public class AdministrarFacturaResource {
 					//Invocar servicio
 					String responseXML = consultarFacturaService.invokeRest(convenio.getUrlPago().concat(idFactura.substring(5)), HttpMethod.POST);
 					Respuesta respuesta = consultarFacturaService.getRespuesta(responseXML,convenio.getTemplatePago());
+					//Enviar notificación
+					consultarFacturaService.enviarNotificacion(TS_URL_UTILITARIO, idFactura, String.format("Factura para el convenio %s pagada con éxito",convenio.getNombreConvenio()));
 					return respuesta;
 				}
 			}else{
@@ -92,9 +98,11 @@ public class AdministrarFacturaResource {
 				//Invocar servicio
 				String responseXML = consultarFacturaService.invokeRest(convenio.getUrlCompensacion().concat(idFactura.substring(5)), HttpMethod.DELETE);
 				Respuesta respuesta = consultarFacturaService.getRespuesta(responseXML,convenio.getTemplateCompensacion());
+				consultarFacturaService.enviarNotificacion(TS_URL_UTILITARIO, idFactura, String.format("Factura para compensada con éxito para el convenio %s",convenio.getNombreConvenio()));
 				return respuesta;
 			}else{
 				Compensacion compensacion = consultarFacturaService.getCompensacion(TS_URL_COMPENSACION, idFactura.substring(0,5), idFactura.substring(5));
+				consultarFacturaService.enviarNotificacion(TS_URL_UTILITARIO, idFactura, String.format("Factura para compensada con éxito para el convenio %s",convenio.getNombreConvenio()));
 				return new Respuesta("El convenio no soporta la operación de compensación, se ha enviado la solicitud al área correspondiente. Número de radicado "+compensacion.getIdRadicado());
 			}
 		}catch(Exception e){

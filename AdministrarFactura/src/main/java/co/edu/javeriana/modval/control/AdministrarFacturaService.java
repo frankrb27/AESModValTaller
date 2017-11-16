@@ -53,6 +53,18 @@ public class AdministrarFacturaService {
 		RestTemplate restTemplate = new RestTemplate();
 		Cuenta cuenta = restTemplate.getForObject(url.concat(idCuenta), Cuenta.class); 
 		return cuenta;
+	}
+	
+	/**
+	 * Generar notificación
+	 * @param url
+	 * @param idFactura
+	 * @param mensaje
+	 * @return
+	 */
+	public void enviarNotificacion (String url, String idFactura, String mensaje){
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.getForObject(url.concat(idFactura).concat("/").concat(mensaje), String.class); 
 	}	
 	
 	/**
