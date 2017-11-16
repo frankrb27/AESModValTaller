@@ -1,0 +1,402 @@
+{
+	"id": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858",
+	"owner": "2091249",
+	"name": "AESModVal",
+	"description": null,
+	"order": [
+		"5231c91c-eabf-648b-d6c5-61f81a0fc71a",
+		"0bc9eddf-3c0c-2da5-0808-9d0af8a326bd",
+		"d610f6ad-9368-a5b4-1093-1f307ecad3ec",
+		"16b6f7d9-d87e-e660-f712-549b73287ac3",
+		"df807e7c-4b1d-efd8-ff71-f7baa7338245",
+		"71f3152f-4aaa-32c5-b0b9-3af35c350bbb",
+		"d553780c-2d58-57eb-19c6-c0ecfe82a131",
+		"958f6b8b-6bbd-0a69-7890-821d2046eb19",
+		"e3b40cc1-381f-44c0-d453-4a6e98ef4a8e",
+		"45d91011-61e9-7207-2ed2-05f4388eb9e1",
+		"f7d1f739-de84-f146-72a5-2339bf3db073",
+		"ed438357-04c9-6849-a72f-c23e4312ab26"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 0,
+	"public": false,
+	"lastUpdatedBy": "2091249",
+	"lastRevision": 2605570908,
+	"team": null,
+	"requests": [
+		{
+			"id": "0bc9eddf-3c0c-2da5-0808-9d0af8a326bd",
+			"headers": "Accept: application/xml\nContent-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "localhost:9010/banco/convenio/v1/factura/10000987",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"name": "1. ConsultarFactura",
+			"description": "Este servicio consulta la factura.",
+			"descriptionFormat": "html",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"folder": null,
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858",
+			"rawModeData": null
+		},
+		{
+			"id": "16b6f7d9-d87e-e660-f712-549b73287ac3",
+			"headers": "Accept: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/banco/convenio/v1/convenios/10000",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510857223178,
+			"name": "2.1 ConsultaConvenio",
+			"description": "",
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858"
+		},
+		{
+			"folder": null,
+			"id": "45d91011-61e9-7207-2ed2-05f4388eb9e1",
+			"name": "GenerarNotificacion",
+			"dataMode": "params",
+			"data": null,
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Accept: application/xml\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "http://localhost:9000/banco/convenio/v1/convenios/10000",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858"
+		},
+		{
+			"id": "5231c91c-eabf-648b-d6c5-61f81a0fc71a",
+			"headers": "Accept: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "http://localhost:9000/banco/convenio/v1/convenios/10000",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"name": "0. RecargarConvenios",
+			"description": "",
+			"descriptionFormat": "html",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"folder": null,
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858",
+			"rawModeData": null
+		},
+		{
+			"id": "71f3152f-4aaa-32c5-b0b9-3af35c350bbb",
+			"headers": "Accept: application/xml\nContent-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9010/banco/convenio/v1/factura/10000987/7896/0245679",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510857214835,
+			"name": "4. PagarFactura",
+			"description": "Este servicio consulta la factura.",
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858"
+		},
+		{
+			"id": "958f6b8b-6bbd-0a69-7890-821d2046eb19",
+			"headers": "Accept: application/xml\nContent-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9010/banco/convenio/v1/factura/10000987",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510857239714,
+			"name": "5. CompensarFactura",
+			"description": "Este servicio consulta la factura.",
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858"
+		},
+		{
+			"id": "d553780c-2d58-57eb-19c6-c0ecfe82a131",
+			"headers": "Accept: application/xml\nContent-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9010/banco/convenio/v1/factura/10000987/789600000/0245679",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510857231806,
+			"name": "4.1 PagarFactura (Sin fondos)",
+			"description": "Este servicio consulta la factura.",
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858"
+		},
+		{
+			"id": "d610f6ad-9368-a5b4-1093-1f307ecad3ec",
+			"headers": "Accept: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "http://localhost:9000/banco/convenio/v1/convenios/10000",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"name": "2. ConsultarConvenios",
+			"description": "",
+			"descriptionFormat": "html",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"folder": null,
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858",
+			"rawModeData": null
+		},
+		{
+			"id": "df807e7c-4b1d-efd8-ff71-f7baa7338245",
+			"headers": "Accept: application/xml\nContent-Type: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9010/banco/convenio/v1/factura/10000987",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510857220085,
+			"name": "3. ConsultarMediosDePago",
+			"description": "Este servicio consulta la factura.",
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858"
+		},
+		{
+			"id": "e3b40cc1-381f-44c0-d453-4a6e98ef4a8e",
+			"headers": "Accept: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "http://localhost:9000/banco/convenio/v1/convenios/10000",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"name": "GenerarCompensacionFactura",
+			"description": "",
+			"descriptionFormat": "html",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"folder": null,
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858",
+			"rawModeData": null
+		},
+		{
+			"id": "ed438357-04c9-6849-a72f-c23e4312ab26",
+			"headers": "Accept: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "http://localhost:9000/banco/convenio/v1/convenios/10000",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"name": "ConsultaFactura-Rest",
+			"description": "",
+			"descriptionFormat": "html",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"folder": null,
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858",
+			"rawModeData": null
+		},
+		{
+			"id": "f7d1f739-de84-f146-72a5-2339bf3db073",
+			"headers": "Accept: application/xml\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/xml",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "http://localhost:9000/banco/convenio/v1/convenios/10000",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"name": "ConsultaFactura-RestSpring",
+			"description": "",
+			"descriptionFormat": "html",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"folder": null,
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858",
+			"rawModeData": null
+		}
+	]
+}
