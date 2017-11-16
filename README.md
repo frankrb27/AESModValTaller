@@ -103,3 +103,5 @@ Además, este servicio es el encargado de direccionar las peticiones a la URL de
      -```./stop.sh```
   - SAPAuthorization
      -```./stop.sh```
+
+###### Se anexa proyecto Postman como referencia: AESModVal.postman_collection.json
