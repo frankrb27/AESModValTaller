@@ -61,15 +61,15 @@ Además, este servicio es el encargado de direccionar las peticiones a la URL de
 3. Dar permisos de ejecución al script chmod.sh con el comando ```chmod +x chmod.sh``` este comando asignará permisos de ejecución a los script internos del proyecto
 4. Ingresar a cada una de las rutas para iniciar los servicios REST y SOAP
   - AdministarCompensacion
-     -```./start.sh```
+     ```./start.sh```
   - AdministarConvenios
-     -```./start.sh```
+     ```./start.sh```
   - AdministarCuenta
-     -```./start.sh```
+     ```./start.sh```
   - AdministarFactura
-     -```./start.sh```
+     ```./start.sh```
   - SAPAuthorization
-     -```./start.sh```
+     ```./start.sh```
 
 ## Pasos para realizar pagos y compensación
 1. Consumir la capacidad **authorization** del servicio SAPAuthorization mediante SoapUI
