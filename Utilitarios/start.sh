@@ -1,3 +1,3 @@
 mvn clean package
-docker build -t rest-service-admon-cuentas .
-docker run -d -p 9040:8080 --name rest-service-admon-cuentas rest-service-admon-cuentas
+docker build -t rest-service-utilitario .
+docker run -d -p 9050:8080 --name rest-service-utilitario rest-service-utilitario

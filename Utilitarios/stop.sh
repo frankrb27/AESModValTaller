@@ -1,3 +1,3 @@
-docker stop rest-service-admon-cuentas
-docker rm rest-service-admon-cuentas
-docker rmi rest-service-admon-cuentas
+docker stop rest-service-utilitario
+docker rm rest-service-utilitario
+docker rmi rest-service-utilitario
