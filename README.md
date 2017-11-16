@@ -43,13 +43,18 @@ Además, este servicio es el encargado de direccionar las peticiones a la URL de
 
 ## SAPAuthorization
 **Descripción:** Permite validar y autorizar a un cliente mediante un usuario y contraseña el acceso a la plataforma para el pago de convenios en línea.
+
 **URL de acceso:** http://localhost:8080/ws
+
 **URL WSDL:** http://localhost:8080/ws/authorization.wsdl
+
 **Capacidades:** authorization(userName, password)
 
 ## Utilitarios
 **Descripción:** Permite enviar notificaciones a los usuarios
+
 **URL de acceso:** http://localhost:9050/banco/convenio/v1/utilitario
+
 **Capacidades:** generarNotificacion(idFactura, mensaje)
 
 #### Para mayor información acerca de los servicios ver documento de inventario de servicios (Inventario de servicios Taller.xlsx)
