@@ -72,9 +72,9 @@ Además, este servicio es el encargado de direccionar las peticiones a la URL de
      ```./start.sh```
 
 ## Pasos para realizar pagos y compensación
-1. Consumir la capacidad **authorization** del servicio SAPAuthorization mediante SoapUI
+1. Consumir la capacidad **authorization** del servicio SAPAuthorization mediante SoapUI o Postman
   - El proyecto Soap se encuentra en la siguiente ruta: SAPAuthorization/SAPAuthorization-soapui-project.xml
-  - #### Los usuarios configurados son: 101010, 101011, 101012 y 101013. Usuario y contraseña son los iguales
+  - #### Los usuarios configurados son: 101010, 101011, 101012 y 101013. Usuario y contraseña son iguales
 2. Consultar la capacidad de **consultarConvenios** del servicio AdministarConvenios mediante Postman o línea de comandos para obtener el listado de convenios disponibles para realizar el pago en línea
   - curl -i -H "Accept: application/xml" -H "Content-type: application/xml" -X GET http://localhost:9000/banco/convenio/v1/convenios
   - curl -i -H "Accept: application/xml" -H "Content-type: application/xml" -X GET http://localhost:9000/banco/convenio/v1/convenios/10000
