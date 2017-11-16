@@ -1,0 +1,9 @@
+io\spring\guides\gs_producing_web_service\Client.class
+io\spring\guides\gs_producing_web_service\GetAuthorizationRequest.class
+io\spring\guides\gs_producing_web_service\ObjectFactory.class
+io\spring\guides\gs_producing_web_service\GetAuthorizationResponse.class
+io\spring\guides\gs_producing_web_service\package-info.class
+co\edu\javeriana\modval\AuthorizationRepository.class
+co\edu\javeriana\modval\AuthorizationEndpoint.class
+co\edu\javeriana\modval\SAPAutorizacionApplication.class
+co\edu\javeriana\modval\WebServiceConfig.class

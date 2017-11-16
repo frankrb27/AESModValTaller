@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="4e772b43-1e81-41e2-8af1-d0c3d5ab9bf1" activeEnvironment="Default" name="SAPAuthorization" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d919d48c-a1c8-407d-b37f-1405e65da78b" wsaVersion="NONE" name="ServicePortSoap11" type="wsdl" bindingName="{http://spring.io/guides/gs-producing-web-service}ServicePortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/authorization.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/authorization.wsdl"><con:part><con:url>http://localhost:8080/ws/authorization.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://spring.io/guides/gs-producing-web-service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://spring.io/guides/gs-producing-web-service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://spring.io/guides/gs-producing-web-service">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://spring.io/guides/gs-producing-web-service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getAuthorizationRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="userName" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAuthorizationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="client" type="tns:client"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="client">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="documentNumber" type="xs:string"/>
+          <xs:element name="authorized" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAuthorizationResponse">
+    <wsdl:part element="tns:getAuthorizationResponse" name="getAuthorizationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAuthorizationRequest">
+    <wsdl:part element="tns:getAuthorizationRequest" name="getAuthorizationRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ServicePort">
+    <wsdl:operation name="getAuthorization">
+      <wsdl:input message="tns:getAuthorizationRequest" name="getAuthorizationRequest"></wsdl:input>
+      <wsdl:output message="tns:getAuthorizationResponse" name="getAuthorizationResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicePortSoap11" type="tns:ServicePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAuthorization">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getAuthorizationRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAuthorizationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicePortService">
+    <wsdl:port binding="tns:ServicePortSoap11" name="ServicePortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="ad2ee5c2-f25f-472b-9288-1545a88dcb2a" isOneWay="false" action="" name="getAuthorization" bindingOperationName="getAuthorization" type="Request-Response" outputName="getAuthorizationResponse" inputName="getAuthorizationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4a6364dc-1d05-4d1e-92e8-bd59fc47cbf6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gs="http://spring.io/guides/gs-producing-web-service">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gs:getAuthorizationRequest>\r
+         <gs:userName>101030</gs:userName>\r
+         <gs:password>101030</gs:password>\r
+      </gs:getAuthorizationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://spring.io/guides/gs-producing-web-service/ServicePort/getAuthorizationRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
