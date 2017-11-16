@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("banco/convenio/v1")
 public class UtilitarioResource {
 
-	@RequestMapping(path = "utilitario/{idFactura}/{mensaje}", method = RequestMethod.POST,
+	@RequestMapping(path = "utilitario/{idFactura}/{mensaje}", method = RequestMethod.GET,
 			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	public String generarNotifiacion(@PathVariable("idFactura") String idFactura, @PathVariable("mensaje") String mensaje) {
 		System.out.println(String.format("Mensaje enviado: [idFactura: %s, mensaje: %s]", idFactura, mensaje));
