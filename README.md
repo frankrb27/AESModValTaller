@@ -111,6 +111,6 @@ Además, este servicio es el encargado de direccionar las peticiones a la URL de
   - SAPAuthorization
      -```./stop.sh```
   - Utilitarios
-     ```./sttop.sh```     
+     ```./stop.sh```     
      
 ###### Se anexa proyecto Postman como referencia: AESModVal.postman_collection.json
