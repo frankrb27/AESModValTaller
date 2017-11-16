@@ -5,6 +5,7 @@
 	"description": null,
 	"order": [
 		"5231c91c-eabf-648b-d6c5-61f81a0fc71a",
+		"22fb4195-96a2-92d1-292c-198a58fae7cf",
 		"0bc9eddf-3c0c-2da5-0808-9d0af8a326bd",
 		"d610f6ad-9368-a5b4-1093-1f307ecad3ec",
 		"16b6f7d9-d87e-e660-f712-549b73287ac3",
@@ -22,7 +23,7 @@
 	"timestamp": 0,
 	"public": false,
 	"lastUpdatedBy": "2091249",
-	"lastRevision": 2605570908,
+	"lastRevision": 2612776496,
 	"team": null,
 	"requests": [
 		{
@@ -87,6 +88,35 @@
 			"name": "2.1 ConsultaConvenio",
 			"description": "",
 			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858"
+		},
+		{
+			"id": "22fb4195-96a2-92d1-292c-198a58fae7cf",
+			"headers": "Content-Type: text/xml\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "text/xml",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/ws/authorization.wsdl",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"name": "SAPAuthorization",
+			"description": "",
+			"descriptionFormat": "html",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"folder": null,
+			"collectionId": "8d9d034e-67b4-3b9a-f3d3-bafd319f8858",
+			"rawModeData": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:gs=\"http://spring.io/guides/gs-producing-web-service\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <gs:getAuthorizationRequest>\r\n         <gs:userName>101012</gs:userName>\r\n         <gs:password>101012</gs:password>\r\n      </gs:getAuthorizationRequest>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
 		},
 		{
 			"folder": null,
