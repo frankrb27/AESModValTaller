@@ -102,7 +102,7 @@ public class AdministrarFacturaResource {
 				return respuesta;
 			}else{
 				Compensacion compensacion = consultarFacturaService.getCompensacion(TS_URL_COMPENSACION, idFactura.substring(0,5), idFactura.substring(5));
-				consultarFacturaService.enviarNotificacion(TS_URL_UTILITARIO, idFactura, String.format("Factura para compensada con éxito para el convenio %s",convenio.getNombreConvenio()));
+				consultarFacturaService.enviarNotificacion(TS_URL_UTILITARIO, idFactura, "El convenio no soporta la operación de compensación, se ha enviado la solicitud al área correspondiente. Número de radicado "+compensacion.getIdRadicado());
 				return new Respuesta("El convenio no soporta la operación de compensación, se ha enviado la solicitud al área correspondiente. Número de radicado "+compensacion.getIdRadicado());
 			}
 		}catch(Exception e){
